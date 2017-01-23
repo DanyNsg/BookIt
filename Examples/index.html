@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div id="app">
+            <span>
+                {{message}}
+            </span>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-1">
+            <span v-bind:title="message">
+                Hover!
+            </span>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-2">
+            <span v-if="seen">
+                Now you see me
+            </span>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-3">
+            <ol>
+                <li v-for="todo in todos">
+                    {{todo.name}}
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-4">
+            <span>{{message}}</span>
+            <button v-on:click="reverseMessage">Reverse message</button>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-5">
+            <span>{{message}}</span>
+            <input type="text" v-model="message">
+        </div>
+    </section>
+
+    <section>
+        <div id="app-6">
+            <ol>
+                <todo-item v-for="item in groceryList" :todo="item"></todo-item>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <div id="example"></div>
+    </section>
+
+    <section>
+        <div id="app-7">
+            <div :id="dynamic" >
+                <span>Do I have dynamic id</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-8">
+            <button :disabled="condition">Button</button>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-9">
+            <span :id="message | capitalize">{{message | capitalize}}</span>
+        </div>
+    </section>
+
+    <section>
+        <div id="app-10">
+            <span>The date is {{ now }}</span>
+            <span>Computed : {{ reversedMessage }}</span>
+            <input type="text" v-model="message">
+        </div>
+    </section>
+
+    <section>
+        <div id="app-11">
+            <span :class="{ active : isActive}">Is Active</span>
+            <span :class="classObject">classObject</span>
+        </div>
+    </section>
+
+
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="javascripts/index.js"></script>
+</html>
